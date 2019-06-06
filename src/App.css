@@ -37,3 +37,7 @@ h1 {
 .not-active {
   color: red;
 }
+
+.occupation {
+  margin: 0;
+}

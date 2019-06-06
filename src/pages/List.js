@@ -3,6 +3,7 @@ import ChildListItem from '../components/childListItem';
 
 // functional component has no state
 const List = () => {
+  console.log('test', dummyData);
   const listItem = dummyData.map( (item, index) => {
     // mapping array of objects and returning jsx ChildListItem. Passing item as props
     // iterated items require unique key. Helps React diffing algorithm. Will throw warning in console without
@@ -25,42 +26,42 @@ export default List;
 const dummyData = [
   {
     name: 'John',
-    occuptation: 'Doctor',
+    occupation: 'Doctor',
     active: true
   },
   {
     name: 'Jane',
-    occuptation: 'Lawyer',
+    occupation: 'Lawyer',
     active: true
   },
   {
     name: 'Jack',
-    occuptation: 'Engineer',
+    occupation: 'Engineer',
     active: true
   },
   {
     name: 'Tom',
-    occuptation: 'Developer',
+    occupation: 'Developer',
     active: false
   },
   {
     name: 'Betty',
-    occuptation: 'Surgeon',
+    occupation: 'Surgeon',
     active: true
   },
   {
     name: 'Mary',
-    occuptation: 'Driver',
+    occupation: 'Driver',
     active: false
   },
   {
     name: 'Alex',
-    occuptation: 'Nurse',
+    occupation: 'Nurse',
     active: true
   },
   {
     name: 'Paul',
-    occuptation: 'Waiter',
+    occupation: 'Waiter',
     active: false
   }
 ];

@@ -15,8 +15,8 @@ const ChildListItem = props => {
         {/* applying inline style */}
         <div style={active ? {} : listStyle}>
             {name}
-            {occupation}
         </div>
+        <p className="occupation">{occupation}</p>
         <div className={ active ? 'active' : 'not-active' }>
           <div>Active?</div>
         </div>
