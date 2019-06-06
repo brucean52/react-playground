@@ -3,7 +3,6 @@ import ChildListItem from '../components/childListItem';
 
 // functional component has no state
 const List = () => {
-  console.log('test', dummyData);
   const listItem = dummyData.map( (item, index) => {
     // mapping array of objects and returning jsx ChildListItem. Passing item as props
     // iterated items require unique key. Helps React diffing algorithm. Will throw warning in console without

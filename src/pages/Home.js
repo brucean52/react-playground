@@ -42,7 +42,7 @@ class Home extends Component {
           <input type="text" placeholder='Enter Title' value={title} onChange={e => this.setState({title: e.target.value})}/>
           <input type="text" placeholder='Enter Description' value={description} onChange={({target}) => this.setState({description: target.value})}/>
           <button className='btn'  type="submit" >Submit</button>
-          {/* binding this is usually donein constructor */}
+          {/* binding this is usually done in constructor */}
           <button className='btn'  onClick={this.handleClear.bind(this)} >Clear</button>
         </form>
         <div>{outputMessage}</div>
