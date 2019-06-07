@@ -23,7 +23,8 @@ class Home extends Component {
       });
   }
 
-  handleClear() {
+  handleClear(event) {
+    event.preventDefault();
     this.setState({
       title: '',
       description: '',
@@ -38,10 +39,10 @@ class Home extends Component {
       <div>
         <h2>Simple Form</h2>
         {/* Inputs implemented in different ways */}
-        <form onSubmit={this.handleSubmit}>
+        <form >
           <input type="text" placeholder='Enter Title' value={title} onChange={e => this.setState({title: e.target.value})}/>
           <input type="text" placeholder='Enter Description' value={description} onChange={({target}) => this.setState({description: target.value})}/>
-          <button className='btn'  type="submit" >Submit</button>
+          <button className='btn' onClick={this.handleSubmit} >Submit</button>
           {/* binding this is usually done in constructor */}
           <button className='btn'  onClick={this.handleClear.bind(this)} >Clear</button>
         </form>
