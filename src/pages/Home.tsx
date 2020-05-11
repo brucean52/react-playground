@@ -5,7 +5,7 @@ const Home = () => {
 
   return (
     <div>
-      <MLButton>Test</MLButton>
+      <MLButton data-testid="test">Test</MLButton>
     <MLAlert/>
     </div>
   );
