@@ -1,114 +1,34 @@
 import React from 'react';
-import { MLButton, MLAlert, MLCheckbox, MLTable } from '@marklogic/design-system'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faColumns } from '@fortawesome/free-solid-svg-icons'
+import {Graphistry} from '@graphistry/client-api-react';
+import '@graphistry/client-api-react/assets/index.less';
+//1000 node data - use together
+import mockData from '../data/MOCK_DATA';
+import mockEdgeData from '../data/MOCK_DATA_EDGE';
 
-const columns = [
-  {
-    title: 'Property Name',
-    dataIndex: 'propertyName',
-    width: 200
-  },
-  {
-    title: 'Type',
-    dataIndex: 'type',
-    width: 125
-  },
-  {
-    dataIndex: 'identifier',
-    width: 100,
-  },
-  {
-    dataIndex: 'multiple',
-    width: 100,
-  },
-  {
-    dataIndex: 'sort',
-    width: 75,
-  },
-  {
-    dataIndex: 'facet',
-    width: 100,
-  },
-  {
-    dataIndex: 'advancedSearch',
-    width: 150,
-  },
-  {
-    dataIndex: 'pii',
-    width: 75,
-  },
-  {
-    title: 'Delete',
-    dataIndex: 'delete',
-    width: 75,
-  },
-  {
-    title: 'Add',
-    dataIndex: 'add',
-    width: 75
-  }
-];
+//demoData - use together
+import demoNode from '../data/graphistry-node';
+import demoEdges from '../data/graphistry-edges';
 
-
-const dataSource = [
-  {
-    add: '',
-    advancedSearch: '',
-    key: 'customerId0',
-    multiple: '',
-    pii: '',
-    type: 'integer',
-    propertyName: 'customerId'
-  },
-  {
-    add: 'Address',
-    key: 'shipping2',
-    type: 'Address',
-    propertyName: 'shipping',
-    children: [
-      {
-        add: '',
-        advancedSearch: '',
-        key: 'shipping20',
-        multiple: '',
-        pii: '',
-        type: 'string',
-        propertyName: 'street'
-      },
-      {
-        add: 'Zip',
-        key: 'zip1',
-        type: 'Zip',
-        propertyName: 'zip',
-        children: [
-          {
-            add: '',
-            advancedSearch: '',
-            key: 'zip20',
-            multiple: '',
-            pii: '',
-            type: 'string',
-            propertyName: 'fiveDigit'
-          }
-        ]
-      },
-    ]
-  }
-]
-
+//mlData = use together
+import mlNodeData from '../data/ml-node';
+import mlEdgeData from '../data/ml-edges';
 
 const Home = () => {
 
   return (
-    <div>
-      <MLButton data-testid="test">Test</MLButton>
-      <FontAwesomeIcon icon={faColumns} size="lg" />
-      <MLTable
-        columns={columns}
-        dataSource={dataSource}
-      />
-    </div>
+    <Graphistry backgroundColor='#fff'
+                showSplashScreen={true}
+                showPointsOfInterest={false}
+                apiKey='<your API Key here>'
+                style={{ border: `1px solid #ccc`, height: '600px' }}
+                graphistryHost='https://labs.graphistry.com'
+                nodes={demoNode}
+                edges={demoEdges}
+                bindings={{
+                    idField: 'nodeId',
+                    sourceField: 'src',
+                    destinationField: 'dst',
+                }}/>
   );
 }
 
